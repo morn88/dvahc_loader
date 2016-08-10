@@ -59,6 +59,7 @@ class MyWind(QtWidgets.QWidget):
                 count_of_files = len(downl_set)
                 self.label_out.setText('Файлов в папке: ' + str(count_of_files))
                 for i in range(len(downl_set)):
+                    QtWidgets.qApp.processEvents()
                     urllib.request.urlretrieve(downl_set[i], os.path.join('done_webm',downl_set[i].split('/')[-1]))
                     self.progress_bar.setValue(value)
                     value += step
