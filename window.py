@@ -1,9 +1,6 @@
 from PyQt5 import QtGui, QtWidgets
 from PyQt5.QtCore import QTimer
-from PyQt5.QtCore import QThread
 import sys
-import time
-import shutil
 import os
 from pyconacc import connect, download, check_folder
 import urllib
@@ -74,10 +71,6 @@ class MyWind(QtWidgets.QWidget):
         except Exception as e:
             print(str(e))
             self.label_out.setText(str(e))
-
-    def update_time(self):
-        clock_time = time.ctime().split()[3]
-        self.clock.display(clock_time)
 
 
 class SystemTrayIcon(QtWidgets.QSystemTrayIcon):
